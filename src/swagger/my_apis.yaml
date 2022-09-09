@@ -1,0 +1,38 @@
+swagger: "2.0"
+
+info:
+  title: "My server API"
+  version: "3.0"
+  description: |
+    This document describes the server API.
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /v1/api
+
+paths:
+  /search:
+    get:
+#      operationId: api.search
+      summary: Search phrase in Wikipedia
+      tags:
+        - Search
+      parameters:
+        - in: query
+          name: search_phrase
+          type: string
+          required: true
+          description: This search is case sensitive
+        - in: query
+          name: k
+          type: integer
+          required: false
+          description: Top K results. default K = 1
+      responses:
+        '200':
+          description: Success to get search from Wikipedia
+        '500':
+          description: unknown exception

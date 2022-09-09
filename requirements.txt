@@ -1,0 +1,8 @@
+flask
+flask_injector
+connexion
+connexion[swagger-ui]
+werkzeug
+wikipedia-api
+swagger-tester
+requests
